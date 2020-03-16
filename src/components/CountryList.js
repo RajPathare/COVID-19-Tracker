@@ -5,16 +5,32 @@ import { fetchList,fetchTotalCases } from '../actions';
 
 class CountryList extends React.Component{
 
-    
+    state = { searchString: '' }
 
     componentDidMount = () =>{
         this.props.fetchList();
         this.props.fetchTotalCases();
     }
 
+    handleChange = (e) => {
+        this.setState({ searchString:e.target.value });
+    }
+
 
     renderList = () => {
-        return this.props.cases.map(cases => {
+
+        var searchCountry = this.props.cases;
+        console.log(searchCountry);
+        var searchString = this.state.searchString.trim().toLowerCase();
+        console.log(searchString);
+
+        if (searchString.length > 0) {
+            searchCountry = searchCountry.filter(function(i) {
+              return i.country.toLowerCase().match( searchString );
+            });
+        }
+
+        return searchCountry.map(cases => {
                 return (
                     <div>
                         <div className="list-group">
@@ -36,11 +52,16 @@ class CountryList extends React.Component{
 
     render()
     {
-        console.log(this.props.cases)
-        console.log(this.props.totalcases.cases)
+        // console.log(this.props.cases)
+        // console.log(this.props.totalcases.cases)
+        // console.log(this.state.searchString)
         return (
             <div className="container">
             <h2>Top 100 countries infected with the virus</h2>
+            <div className="md-form">
+            <input type="text" id="form1" className="form-control" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here..."/>
+            <h5>Search your country here...</h5>
+            </div>
             {this.renderList()}
             </div>
         )
