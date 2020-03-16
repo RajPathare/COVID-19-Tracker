@@ -26,7 +26,7 @@ class CountryList extends React.Component{
                             <p className="mb-1">Total number of cases - {cases.cases}</p>
                             <small>Number of patients recovered - {cases.recovered}</small><br/>
                             <small>Total Deaths - {cases.deaths}</small><br/>
-                            <small>Number of deaths today due to the virus - {cases.todayCases}</small>
+                            <small>Number of deaths today due to the virus - {cases.todayDeaths}</small>
                             </a>
                         </div>
                     </div>
