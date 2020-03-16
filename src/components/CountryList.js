@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchList,fetchTotalCases } from '../actions';
+import { getCode } from 'country-list';
+import countryOverwrite from '../module-overwrite/countryCode';
 
 
 class CountryList extends React.Component{
@@ -23,6 +25,8 @@ class CountryList extends React.Component{
         console.log(searchCountry);
         var searchString = this.state.searchString.trim().toLowerCase();
         console.log(searchString);
+        
+        
 
         if (searchString.length > 0) {
             searchCountry = searchCountry.filter(function(i) {
@@ -40,9 +44,12 @@ class CountryList extends React.Component{
     
                            </div>
                             <p className="mb-1">Total number of cases - {cases.cases}</p>
+                            
                             <small>Number of patients recovered - {cases.recovered}</small><br/>
                             <small>Total Deaths - {cases.deaths}</small><br/>
                             <small>Number of deaths today due to the virus - {cases.todayDeaths}</small>
+                            {/* <small className="float-right">{this.props.totalcases.cases/this.props.cases.cases}</small> */}
+                            <img className="rounded float-right" style={{ padding:"0 0"}} src={`https://www.countryflags.io/${getCode(cases.country)}/flat/64.png`}></img>
                             </a>
                         </div>
                     </div>
@@ -52,9 +59,7 @@ class CountryList extends React.Component{
 
     render()
     {
-        // console.log(this.props.cases)
-        // console.log(this.props.totalcases.cases)
-        // console.log(this.state.searchString)
+    
         return (
             <div className="container">
             <h2>Top 100 countries infected with the virus</h2>
