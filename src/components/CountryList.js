@@ -40,15 +40,16 @@ class CountryList extends React.Component{
                         <div className="list-group">
                             <a className="list-group-item list-group-item-action flex-column align-items-start">
                             <div className="d-flex w-100 justify-content-between">
-                            <h5 className="mb-1">{cases.country}</h5>
+                            <h5 className="mb-1" style={{ color:"blue"}}>{cases.country}</h5>
     
                            </div>
                             <p className="mb-1">Total number of cases - {cases.cases}</p>
+                            <p style={{ color:"red"}}>(World percentage - {(cases.cases/this.props.totalcases.cases * 100).toFixed(2)}%)</p>
+                            
                             
                             <small>Number of patients recovered - {cases.recovered}</small><br/>
                             <small>Total Deaths - {cases.deaths}</small><br/>
                             <small>Number of deaths today due to the virus - {cases.todayDeaths}</small>
-                            {/* <small className="float-right">{this.props.totalcases.cases/this.props.cases.cases}</small> */}
                             <img className="rounded float-right" style={{ padding:"0 0"}} src={`https://www.countryflags.io/${getCode(cases.country)}/flat/64.png`}></img>
                             </a>
                         </div>
@@ -62,7 +63,7 @@ class CountryList extends React.Component{
     
         return (
             <div className="container">
-            <h2>Top 100 countries infected with the virus</h2>
+            <h2 style={{ color:"red"}}>Top 100 countries infected by the virus</h2>
             <div className="md-form">
             <input type="text" id="form1" className="form-control" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here..."/>
             <h5>Search your country here...</h5>

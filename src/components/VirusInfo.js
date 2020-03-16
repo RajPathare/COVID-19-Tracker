@@ -9,7 +9,7 @@ class VirusInfo extends React.Component {
     render()
     {
         return (<div className="container">
-        <h2> Total number of infected people with the virus - {this.props.totalcases.cases}</h2>
+        <h2> Total number of infected people by the virus - {this.props.totalcases.cases}</h2>
         <hr/>
         <h3>About the virus</h3>
         <div className="lead">
