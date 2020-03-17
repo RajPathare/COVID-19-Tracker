@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchList,fetchTotalCases } from '../actions';
 import { getCode } from 'country-list';
 import countryOverwrite from '../module-overwrite/countryCode';
+import commaNumber from 'comma-number';
 
 
 class CountryList extends React.Component{
@@ -43,13 +44,13 @@ class CountryList extends React.Component{
                             <h5 className="mb-1" style={{ color:"blue"}}>{cases.country}</h5>
     
                            </div>
-                            <p className="mb-1">Total number of cases - {cases.cases}</p>
+                            <p className="mb-1">Total number of cases - {commaNumber(cases.cases)}</p>
                             <p style={{ color:"red"}}>(World percentage - {(cases.cases/this.props.totalcases.cases * 100).toFixed(2)}%)</p>
                             
                             
-                            <small>Number of patients recovered - {cases.recovered}</small><br/>
-                            <small>Total Deaths - {cases.deaths}</small><br/>
-                            <small>Number of deaths today due to the virus - {cases.todayDeaths}</small>
+                            <small>Number of patients recovered - {commaNumber(cases.recovered)}</small><br/>
+                            <small>Total Deaths - {commaNumber(cases.deaths)}</small><br/>
+                            <small>Number of deaths today due to the virus - {commaNumber(cases.todayDeaths)}</small>
                             <img className="rounded float-right" style={{ padding:"0 0"}} src={`https://www.countryflags.io/${getCode(cases.country)}/flat/64.png`}></img>
                             </a>
                         </div>

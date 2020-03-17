@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchList,fetchTotalCases } from '../actions';
 
+import commaNumber from 'comma-number';
+
 
 class VirusInfo extends React.Component {
 
@@ -9,7 +11,7 @@ class VirusInfo extends React.Component {
     render()
     {
         return (<div className="container">
-        <h2> Total number of infected people by the virus - {this.props.totalcases.cases}</h2>
+        <h2> Total number of infected people by the virus - {commaNumber(this.props.totalcases.cases)}</h2>
         <hr/>
         <h3>About the virus</h3>
         <div className="lead">
