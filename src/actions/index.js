@@ -4,7 +4,7 @@ import corona from '../api/corona';
 export const fetchList = () => {
     
     return async (dispatch, getState) => {
-        const response = await corona.get('/countries');
+        const response = await corona.get('/countries?sort=cases');
 
         dispatch({ type:'FETCH_LIST', payload: response.data })
     } 
