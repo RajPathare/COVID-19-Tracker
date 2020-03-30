@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchList, fetchTotalCases } from '../actions';
+import spinningworld from '../assets/spinningworld.gif'
 
 import commaNumber from 'comma-number';
 
@@ -23,7 +24,9 @@ class TotalCases extends React.Component{
         <div className="list-group">
            <small style={{ fontSize: "17px"}}>Total number of people recovered - <span style={{ color:"blue"}}>{commaNumber(this.props.totalInfo.recovered)}</span></small>
            <small style={{ fontSize: "17px"}}>Total number of deaths - <span style={{ color:"red"}}>{commaNumber(this.props.totalInfo.deaths)}</span></small>
+           
         </div>
+        <img className="rounded float-right" style={{ padding:"0 0", width:"100px", height:"100px"}} src={spinningworld}></img>
             </a>
         </div>
     </div>
