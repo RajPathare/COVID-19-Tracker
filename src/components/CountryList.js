@@ -35,6 +35,24 @@ class CountryList extends React.Component{
             });
         }
 
+        if(searchCountry.length === 0)
+        {
+            console.log('No results found')
+            return (
+                <div>
+                <div className="list-group">
+                    <a className="list-group-item list-group-item-action flex-column align-items-start">
+                    <div className="d-flex w-100 justify-content-between">
+                    <h5 className="mb-1" style={{ color:"blue"}}>No results found, please try entering your country name again.</h5>
+
+                   </div>
+                   
+                    </a>
+                </div>
+            </div>
+            )
+        }
+
         return searchCountry.map(cases => {
                 return (
                     <div>
@@ -66,8 +84,8 @@ class CountryList extends React.Component{
             <div className="container">
             <h2 style={{ color:"red"}}>Top 100 countries infected by the virus</h2>
             <div className="md-form">
-            <input type="text" id="form1" className="form-control" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here..."/>
-            <h5>Search your country here...</h5>
+            <input type="text" id="form1" className="form-control" value={this.state.searchString} onChange={this.handleChange} placeholder="Search your country here..."/>
+            <br/>
             </div>
             {this.renderList()}
             </div>
