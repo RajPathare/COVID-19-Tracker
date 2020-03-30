@@ -93,7 +93,7 @@ class CountryList extends React.Component{
     
         return (
             <div className="container">
-            <h2 style={{ color:"red"}}>Top 100 countries infected by the virus</h2>
+            <h2 style={{ color:"red"}}>Top countries infected by the virus</h2>
             <div className="md-form">
             <input type="text" id="form1" className="form-control" value={this.state.searchString} onChange={this.handleChange} placeholder="Search your country here..."/>
             <br/>
