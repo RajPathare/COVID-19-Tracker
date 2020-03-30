@@ -4,9 +4,12 @@ import { fetchList,fetchTotalCases } from '../actions';
 import { getCode } from 'country-list';
 import countryOverwrite from '../module-overwrite/countryCode';
 import commaNumber from 'comma-number';
+import ordinal from 'ordinal';
+import { elementType } from 'prop-types';
 
 
 class CountryList extends React.Component{
+
 
     state = { searchString: '' }
 
@@ -23,7 +26,12 @@ class CountryList extends React.Component{
     renderList = () => {
 
         var searchCountry = this.props.cases;
-        console.log(searchCountry);
+
+        searchCountry.forEach((element,rankNumber=1) => {
+            element.rank = ++rankNumber;
+        })
+
+        console.log(searchCountry)
         var searchString = this.state.searchString.trim().toLowerCase();
         console.log(searchString);
         
@@ -60,6 +68,8 @@ class CountryList extends React.Component{
                             <a className="list-group-item list-group-item-action flex-column align-items-start">
                             <div className="d-flex w-100 justify-content-between">
                             <h5 className="mb-1" style={{ color:"blue"}}>{cases.country}</h5>
+                            <h5 className="mb-1" style={{ color:"red"}}>{ordinal(cases.rank)}</h5>
+                            
     
                            </div>
                             <p className="mb-1">Total number of cases - {commaNumber(cases.cases)}</p>
@@ -73,6 +83,7 @@ class CountryList extends React.Component{
                             </a>
                         </div>
                     </div>
+                    
                 )
         })
     }

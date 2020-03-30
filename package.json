@@ -10,6 +10,7 @@
     "comma-number": "^2.0.1",
     "country-code-lookup": "0.0.16",
     "country-list": "^2.2.0",
+    "ordinal": "^1.0.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
