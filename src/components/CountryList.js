@@ -33,9 +33,9 @@ class CountryList extends React.Component{
             element.rank = ++rankNumber;
         })
 
-        console.log(searchCountry)
+        // console.log(searchCountry)
         var searchString = this.state.searchString.trim().toLowerCase();
-        console.log(searchString);
+        // console.log(searchString);
         
         
 
@@ -47,7 +47,7 @@ class CountryList extends React.Component{
 
         if(searchCountry.length === 0)
         {
-            console.log('No results found')
+            // console.log('No results found')
             return (
                 <div>
                 <div className="list-group card-3">
