@@ -4,7 +4,7 @@ import { fetchList, fetchTotalCases } from '../actions';
 import spinningworld from '../assets/spinningworld.gif'
 
 import commaNumber from 'comma-number';
-
+import '../style/box.css'
 
 class TotalCases extends React.Component{
 
@@ -15,7 +15,7 @@ class TotalCases extends React.Component{
         <div className="container">
         <h2 style={{ color:"red"}}>Total number of infected people (World)</h2>
         <div>
-        <div className="list-group">
+        <div className="list-group card-3">
             <a className="list-group-item list-group-item-action flex-column align-items-start">
             <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1" style={{ color:"blue"}}><span style={{ color:"black"}}>Total number of cases -</span> {commaNumber(this.props.totalInfo.cases)}</h5>

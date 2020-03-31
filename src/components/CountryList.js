@@ -7,6 +7,8 @@ import commaNumber from 'comma-number';
 import ordinal from 'ordinal';
 import { elementType } from 'prop-types';
 
+import '../style/box.css'
+
 
 class CountryList extends React.Component{
 
@@ -64,7 +66,7 @@ class CountryList extends React.Component{
         return searchCountry.map(cases => {
                 return (
                     <div>
-                        <div className="list-group">
+                        <div className="list-group card-3">
                             <a className="list-group-item list-group-item-action flex-column align-items-start">
                             <div className="d-flex w-100 justify-content-between">
                             <h5 className="mb-1" style={{ color:"blue"}}>{cases.country}</h5>
@@ -95,7 +97,7 @@ class CountryList extends React.Component{
             <div className="container">
             <h2 style={{ color:"red"}}>Top countries infected by the virus</h2>
             <div className="md-form">
-            <input type="text" id="form1" className="form-control" value={this.state.searchString} onChange={this.handleChange} placeholder="Search your country here..."/>
+            <input type="text" id="form1" className="form-control card-3" value={this.state.searchString} onChange={this.handleChange} placeholder="Search your country here..."/>
             <br/>
             </div>
             {this.renderList()}
