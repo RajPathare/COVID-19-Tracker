@@ -50,7 +50,7 @@ class CountryList extends React.Component{
             console.log('No results found')
             return (
                 <div>
-                <div className="list-group">
+                <div className="list-group card-3">
                     <a className="list-group-item list-group-item-action flex-column align-items-start">
                     <div className="d-flex w-100 justify-content-between">
                     <h5 className="mb-1" style={{ color:"blue"}}>No results found, please try entering your country name again.</h5>
@@ -94,7 +94,7 @@ class CountryList extends React.Component{
     {
     
         return (
-            <div className="container">
+            <div className="container" style={{ fontFamily:"Roboto"}}>
             <h2 style={{ color:"red"}}>Top countries infected by the virus</h2>
             <div className="md-form">
             <input type="text" id="form1" className="form-control card-3" value={this.state.searchString} onChange={this.handleChange} placeholder="Search your country here..."/>
