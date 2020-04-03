@@ -13,7 +13,7 @@ class TotalCases extends React.Component{
    {
        return (
         <div className="container fadeIn wow" style={{ fontFamily:"Roboto"}}>
-        <h2 style={{ color:"red"}}>Total number of infected people (World)</h2>
+        <h2 style={{ color:"#EF6603"}}>Total number of infected people (World)</h2>
         <div>
         <div className="list-group card-3"> 
             <a className="list-group-item list-group-item-action flex-column align-items-start" style={{ backgroundColor:"white"}}>
