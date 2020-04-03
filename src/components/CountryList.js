@@ -94,7 +94,7 @@ class CountryList extends React.Component{
     {
     
         return (
-            <div className="container wow bounceInUp" style={{ fontFamily:"Roboto"}}>
+            <div className="container fadeIn wow" style={{ fontFamily:"Roboto"}}>
             <h2 style={{ color:"red"}}>Top countries infected by the virus</h2>
             <div className="md-form">
             <input type="text" id="form1" className="form-control card-3" value={this.state.searchString} onChange={this.handleChange} placeholder="Search your country here..."/>
