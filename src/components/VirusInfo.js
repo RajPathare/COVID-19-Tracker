@@ -11,7 +11,7 @@ class VirusInfo extends React.Component {
     render()
     {
         return (<div className="container">
-        <hr/>
+        
         <h3 style={{ fontFamily:"Roboto"}}>About the virus</h3>
         <div className="lead" style={{ fontFamily:"Roboto"}}>
         Coronaviruses (CoV) are a large family of viruses that cause illness ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS-CoV) and Severe Acute Respiratory Syndrome (SARS-CoV).

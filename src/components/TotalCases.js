@@ -12,7 +12,7 @@ class TotalCases extends React.Component{
    render()
    {
        return (
-        <div className="container" style={{ fontFamily:"Roboto"}}>
+        <div className="container animated bounce delay-1s wow" style={{ fontFamily:"Roboto"}}>
         <h2 style={{ color:"red"}}>Total number of infected people (World)</h2>
         <div>
         <div className="list-group card-3"> 
