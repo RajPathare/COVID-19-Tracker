@@ -31,7 +31,7 @@ class CountryList extends React.Component{
        // delete searchCountry[0]; // remove world cases
 
         searchCountry.forEach((element,rankNumber=1) => {
-            element.rank = rankNumber++;
+            element.rank = ++rankNumber;
         })
 
         // console.log(searchCountry)
