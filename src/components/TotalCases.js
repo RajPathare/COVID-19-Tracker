@@ -24,6 +24,7 @@ class TotalCases extends React.Component{
         <div className="list-group">
            <small style={{ fontSize: "17px"}}>Total number of people recovered - <span style={{ color:"blue"}}>{commaNumber(this.props.totalInfo.recovered)}</span></small>
            <small style={{ fontSize: "17px"}}>Total number of deaths - <span style={{ color:"red"}}>{commaNumber(this.props.totalInfo.deaths)}</span></small>
+           <small style={{ fontSize: "17px"}}>Total number of deaths today due to the virus - <span style={{ color:"red"}}>{commaNumber(this.props.totalInfo.todayDeaths)}</span></small>
            
         </div>
         <img className="rounded float-right" style={{ padding:"0 0", width:"100px", height:"100px"}} src={spinningworld}></img>
